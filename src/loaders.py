@@ -18,7 +18,10 @@ def build_chunk_retriever(transcript_path: str):
     )
 
     # split into chunks of the form: Document(page_content="", metadata={})
-    chunks = splitter.split_documents(docs) 
+    chunks = splitter.split_documents(docs)
+
+    if not chunks:
+        raise ValueError("Transcript produced no chunks. Check input file.")
 
     # extract the texts only
     texts: list[str] = [doc.page_content for doc in chunks]
