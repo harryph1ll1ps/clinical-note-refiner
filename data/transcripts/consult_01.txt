@@ -1,0 +1,57 @@
+Doctor: Hi Sarah, come on in. How can I help today?
+
+Patient: Hi doctor. I've been having headaches for the last couple of weeks.
+
+Doctor: Okay. Can you tell me a bit more about them?
+
+Patient: They're mostly on the left side of my head. It feels like a dull pressure rather than sharp pain.
+
+Doctor: How often are you getting them?
+
+Patient: Pretty much every day. Usually later in the afternoon.
+
+Doctor: And how long do they tend to last?
+
+Patient: A few hours usually.
+
+Doctor: Any nausea or vomiting with them?
+
+Patient: No vomiting. Occasionally I feel a bit sensitive to light.
+
+Doctor: Any visual symptoms like flashing lights or blurred vision?
+
+Patient: No.
+
+Doctor: Any weakness, numbness, or trouble speaking?
+
+Patient: No.
+
+Doctor: Have you noticed anything that triggers them?
+
+Patient: Stress definitely makes them worse. Work's been really busy lately.
+
+Doctor: Anything that helps?
+
+Patient: If I lie down or take Panadol it eases a bit.
+
+Doctor: How much Panadol are you taking?
+
+Patient: Two tablets, usually once a day.
+
+Doctor: Any past history of headaches or migraines?
+
+Patient: No.
+
+Doctor: Any fevers or recent illnesses?
+
+Patient: No.
+
+Doctor: Alright, I'll check your blood pressure and do a quick neurological exam.
+
+[Examination performed]
+
+Doctor: Blood pressure is within normal range. Neurological exam is normal.
+
+Patient: Okay.
+
+Doctor: Based on what you've told me and the exam, this sounds most consistent with tension-type headaches. I'll go through some management options and when to come back if things change.
