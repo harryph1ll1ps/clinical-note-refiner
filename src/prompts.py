@@ -15,6 +15,9 @@ RULES:
 - If relevant clinical information is missing from the transcript, do NOT guess. Instead, list it under "missing_info".
 - Preserve a professional clinical tone suitable for medical documentation.
 - Every meaningful change or addition must be supported by the transcript.
+- Output MUST be a single JSON object with the fields exactly as specified.
+- Do NOT nest the output under "properties" or any other wrapper.
+- Do NOT include schema definitions or explanations.
 
 WHAT TO DO:
 - Improve clarity, structure, and clinical precision.
