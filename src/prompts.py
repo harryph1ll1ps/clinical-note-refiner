@@ -5,7 +5,7 @@ REFINE_NOTE_PROMPT = PromptTemplate.from_template("""
 You are assisting a clinician by refining a draft clinical note.
 
 You are given:
-1. A consult transcript (verbatim conversation)
+1. Relevant excerpts from the consult transcript (verbatim)
 2. A draft clinical note written by the clinician
 
 Your task is to improve the clinical note while following these rules strictly:
@@ -25,8 +25,8 @@ WHAT TO DO:
 OUTPUT FORMAT:
 {format_instructions}
 
-TRANSCRIPT:
-{transcript}
+RELEVANT TRANSCRIPT EXCERPTS:
+{relevant_transcript_excerpts}
 
 DRAFT NOTE:
 {draft_note}
