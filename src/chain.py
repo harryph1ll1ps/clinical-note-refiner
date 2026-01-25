@@ -1,4 +1,4 @@
-from langchain_openai import ChatOpenAI
+from langchain_community.chat_models import ChatOllama
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.runnables import RunnableLambda
@@ -13,8 +13,8 @@ def build_refinement_chain(retriever):
     Chain that refines a clinical note based off a transcript.
     """
 
-    llm = ChatOpenAI(
-        model="gpt-4o-mini",
+    llm = ChatOllama(
+        model="llama3.2:3b",
         temperature=0.2,
     )
 
