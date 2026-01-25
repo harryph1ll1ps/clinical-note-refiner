@@ -24,7 +24,17 @@ def parse_args():
         help="Path to the draft clinical note (.txt)",
     )
 
-    return parser.parse_args()
+    args = parser.parse_args()
+
+    if not args.transcript.exists():
+        parser.error(f"Transcript file not found: {args.transcript}")
+
+    if not args.note.exists():
+        parser.error(f"Note file not found: {args.note}")
+
+    return args
+
+
 
 
 if __name__ == "__main__":

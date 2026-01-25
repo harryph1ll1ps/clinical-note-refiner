@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import OllamaEmbeddings
 
-MAX_CHUNKS = 4
+TOP_K_CHUNKS = 4
 
 def build_chunk_retriever(transcript_path: str):
 
@@ -23,23 +23,23 @@ def build_chunk_retriever(transcript_path: str):
     if not chunks:
         raise ValueError("Transcript produced no chunks. Check input file.")
 
-    # extract the texts only
-    texts: list[str] = [doc.page_content for doc in chunks]
 
-    # embed text 
+    # initialise embedding object
     embedding_model = OllamaEmbeddings(
         model="nomic-embed-text"
     )
-    embeddings = embedding_model.embed_documents(texts)
 
-    # store embeddings in vector index structure for quick retrieval
+    # 1) extracts page content from each chunk
+    # 2) embeds each chunk of content
+    # 3) stores each embedding in a vector index structure for efficient retrieval
     # note: FAISS is a local index compared to a hosted DB such as pinecone
-    vectorstore = FAISS.from_embeddings(
-        embeddings=embeddings,
+    vectorstore = FAISS.from_documents(
         documents=chunks,
+        embedding=embedding_model,
     )
+
 
     # return a retriever that gives the top-k relevant chunks, given some input text
     return vectorstore.as_retriever(
-        search_kwargs={"k": MAX_CHUNKS}
+        search_kwargs={"k": TOP_K_CHUNKS}
     )
