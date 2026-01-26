@@ -13,7 +13,7 @@ def build_chunk_retriever(path: str):
 
     # chunk the document
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
+        chunk_size=500, # should probably do a smaller chunk size for the icd codes, but not today
         chunk_overlap=50,
     )
 
