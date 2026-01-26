@@ -5,13 +5,13 @@ from langchain_community.embeddings import OllamaEmbeddings
 
 TOP_K_CHUNKS = 4
 
-def build_chunk_retriever(transcript_path: str):
+def build_chunk_retriever(path: str):
 
     # create loader object and then load the transcript
-    loader = TextLoader(transcript_path, encoding="utf-8")
+    loader = TextLoader(path, encoding="utf-8")
     docs = loader.load()
 
-    # chunk the transcript
+    # chunk the document
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
         chunk_overlap=50,

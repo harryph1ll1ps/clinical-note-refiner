@@ -24,6 +24,13 @@ def parse_args():
         help="Path to the draft clinical note (.txt)",
     )
 
+    parser.add_argument(
+        "--codes",
+        type=Path,
+        required=True,
+        help="Path to a clinical codes reference file (.txt)",
+    )
+
     args = parser.parse_args()
 
     if not args.transcript.exists():
@@ -31,6 +38,9 @@ def parse_args():
 
     if not args.note.exists():
         parser.error(f"Note file not found: {args.note}")
+
+    if not args.codes.exists():
+        parser.error(f"Codes file not found: {args.codes}")
 
     return args
 

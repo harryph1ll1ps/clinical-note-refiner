@@ -33,4 +33,29 @@ RELEVANT TRANSCRIPT EXCERPTS:
 
 DRAFT NOTE:
 {draft_note}
-""")
+""".strip())
+
+
+CODE_RETRIEVAL_PROMPT = PromptTemplate.from_template("""
+You are given:
+1. A clinical note
+2. Relevant excerpts from a clinical coding reference
+
+Your task is to identify the most appropriate clinical codes
+that are supported by the note.
+
+RULES:
+- Only suggest codes that are clearly supported by the note.
+- Do not guess or upcode.
+- Provide a brief rationale for each suggested code.
+- If no codes are appropriate, return an empty list.
+
+OUTPUT FORMAT:
+{format_instructions}
+
+CLINICAL NOTE:
+{clinical_note}
+
+CODING REFERENCE EXCERPTS:
+{relevant_codes}
+""".strip())

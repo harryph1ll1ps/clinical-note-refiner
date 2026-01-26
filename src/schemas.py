@@ -1,20 +1,19 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List
 
 class RefinedNote(BaseModel):
-    refined_note: str = Field(
-        description="The improved clinical note, based strictly on the consult transcript"
-    )
+    refined_note: str
+    changes_made: List[str] 
+    missing_info: List[str]
+    citations: List[str]
 
-    changes_made: List[str] = Field(
-        description="List describing what was changed or added"
-    )
+class SuggestedCode(BaseModel):
+    code: str
+    description: str
+    rationale: str
 
-    missing_info: List[str] = Field(
-        description="Clinically relevant info that was missing"
-    )
 
-    citations: List[str] = Field(
-        description="Short quotes or phrases from the transcript that support the changes"
-    )
+class CodeSuggestions(BaseModel):
+    suggested_codes: List[SuggestedCode]
+
 

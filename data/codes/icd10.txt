@@ -1,0 +1,83 @@
+R51 - Headache
+
+G44.2 - Tension-type headache
+
+G43.9 - Migraine, unspecified
+
+G43.0 - Migraine without aura
+
+G44.1 - Vascular headache, not elsewhere classified
+
+R42 - Dizziness and giddiness
+
+R53 - Malaise and fatigue
+
+R53.1 - Weakness
+
+R07.4 - Chest pain, unspecified
+
+R06.02 - Shortness of breath
+
+R06.00 - Dyspnoea, unspecified
+
+R11 - Nausea and vomiting
+
+R10.9 - Abdominal pain, unspecified
+
+R50.9 - Fever, unspecified
+
+R05 - Cough
+
+R09.81 - Nasal congestion
+
+J06.9 - Acute upper respiratory infection, unspecified
+
+J00 - Acute nasopharyngitis (common cold)
+
+J02.9 - Acute pharyngitis, unspecified
+
+J20.9 - Acute bronchitis, unspecified
+
+M54.5 - Low back pain
+
+M54.2 - Cervicalgia (neck pain)
+
+M79.1 - Myalgia
+
+M25.50 - Pain in unspecified joint
+
+F41.9 - Anxiety disorder, unspecified
+
+F32.9 - Major depressive disorder, unspecified
+
+Z73.3 - Stress, not elsewhere classified
+
+Z72.89 - Other problems related to lifestyle
+
+Z60.0 - Problems of adjustment to life-cycle transitions
+
+Z71.1 - Person with feared complaint in whom no diagnosis is made
+
+Z71.9 - Counselling, unspecified
+
+Z72.0 - Tobacco use, not otherwise specified
+
+Z72.1 - Alcohol use
+
+Z79.899 - Other long term (current) drug therapy
+
+Z88.9 - Allergy status to unspecified drugs
+
+Z00.00 - General adult medical examination without abnormal findings
+
+Z09 - Follow-up examination after treatment for conditions other than malignant neoplasms
+
+I10 - Essential (primary) hypertension
+
+E11.9 - Type 2 diabetes mellitus without complications
+
+E78.5 - Hyperlipidaemia, unspecified
+
+N39.0 - Urinary tract infection, site not specified
+
+K21.9 - Gastro-oesophageal reflux disease without oesophagitis

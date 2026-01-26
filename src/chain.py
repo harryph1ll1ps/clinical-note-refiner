@@ -5,8 +5,8 @@ from langchain_core.runnables import RunnableLambda
 from langchain_core.documents import Document
 
 
-from prompts import REFINE_NOTE_PROMPT
-from schemas import RefinedNote
+from prompts import REFINE_NOTE_PROMPT, CODE_RETRIEVAL_PROMPT
+from schemas import RefinedNote, CodeSuggestions
 
 
 def format_docs(docs: list[Document]):
@@ -44,6 +44,34 @@ def build_refinement_chain(retriever):
         | REFINE_NOTE_PROMPT # dictionary values are pasted into prompt
         | llm 
         | parser # llm output is parsed into pydantic object
+    )
+
+    return chain
+
+
+def build_code_retrieval_chain(retriever):
+    llm = ChatOllama(
+        model="llama3.2:3b",
+        temperature=0.2,
+    )
+
+
+    # create parser to ensure LLM output matches schema
+    parser = PydanticOutputParser(
+        pydantic_object=CodeSuggestions
+    )
+
+    chain = (
+        {
+            "clinical_note": RunnablePassthrough(),
+            "relevant_codes": retriever | RunnableLambda(format_docs),
+            "format_instructions": RunnableLambda(
+                lambda _: parser.get_format_instructions() 
+            ),
+        }
+        | CODE_RETRIEVAL_PROMPT
+        | llm
+        | parser
     )
 
     return chain
