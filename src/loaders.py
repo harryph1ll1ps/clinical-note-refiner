@@ -30,7 +30,7 @@ def build_chunk_retriever(path: str):
     )
 
     # 1) extracts page content from each chunk
-    # 2) embeds each chunk of content
+    # 2) embeds each piece of content
     # 3) stores each embedding in a vector index structure for efficient retrieval
     # note: FAISS is a local index compared to a hosted DB such as pinecone
     vectorstore = FAISS.from_documents(
